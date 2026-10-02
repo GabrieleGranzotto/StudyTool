@@ -1,0 +1,8 @@
+numpy
+matplotlib
+customtkinter
+requests
+SpeechRecognition
+pyaudio
+openai-whisper
+soundfile
