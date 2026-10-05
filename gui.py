@@ -49,9 +49,16 @@ class IntegratedStudyApp(ctk.CTk):
 
     def get_subjects(self):
         subjects = []
-        for item in os.listdir('.'):
-            if os.path.isdir(item) and not item.startswith(('.', '__')) and item != 'tests':
-                if os.path.exists(os.path.join(item, 'questions.json')):
+        data_dir = os.path.join(os.getcwd(), 'subjects')
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir, exist_ok=True)
+            return subjects
+
+        for item in os.listdir(data_dir):
+            item_path = os.path.join(data_dir, item)
+            # Controlla dentro materie/ e verifica che sia una cartella valida
+            if os.path.isdir(item_path) and not item.startswith(('.', '__')):
+                if os.path.exists(os.path.join(item_path, 'questions.json')):
                     subjects.append(item)
         return sorted(subjects)
 

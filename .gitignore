@@ -1,3 +1,14 @@
-__pycache__
-computer_vision
-pml
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.wav
+*.html
+.DS_Store
+
+subjects/
+
+venv/
+env/
+
+.cache/

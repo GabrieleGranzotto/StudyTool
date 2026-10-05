@@ -8,7 +8,8 @@ class QuestionExtraction:
     def __init__(self, subject_name, questions=None, init_weights_policy="uniform"):
         # Impostazione della cartella del progetto
         self.subject_name = subject_name
-        self.base_dir = os.path.join(os.getcwd(), subject_name)
+        self.master_dir = os.path.join(os.getcwd(), 'subjects')
+        self.base_dir = os.path.join(self.master_dir, subject_name)
         
         # Crea la cartella in modo sicuro se non esiste già
         os.makedirs(self.base_dir, exist_ok=True)
